@@ -69,4 +69,14 @@ export default tseslint.config(
 			"@typescript-eslint/no-unsafe-call": "off",
 		},
 	},
+	{
+		rules: {
+			"n/no-missing-import": [
+				"error",
+				{
+					ignoreTypeImport: true,
+				},
+			],
+		},
+	},
 );

@@ -1,5 +1,5 @@
 import { ConstructorType } from "./types/ConstructorType.js";
-import { Class, SetOptional } from "type-fest";
+import type { Class, SetOptional } from "type-fest";
 import { EasyConstructorOptions } from "./types/EasyConstructorOptions.js";
 
 export function easyConstructor<
