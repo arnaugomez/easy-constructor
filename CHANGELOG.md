@@ -1,3 +1,9 @@
+# [0.2.0](https://github.com/arnaugomez/easy-constructor/compare/0.1.0...0.2.0) (2024-11-01)
+
+### Features
+
+- create library ([81bb498](https://github.com/arnaugomez/easy-constructor/commit/81bb498fa5b6c9e7ee6cbd003b62232eb909a0f1))
+
 # 0.1.0 (2024-11-01)
 
 ### Bug Fixes
