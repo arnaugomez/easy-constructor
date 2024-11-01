@@ -9,67 +9,67 @@ importers:
   .:
     devDependencies:
       '@eslint/js':
-        specifier: ^9.13.0
+        specifier: 9.13.0
         version: 9.13.0
       '@release-it/conventional-changelog':
-        specifier: ^9.0.2
+        specifier: 9.0.2
         version: 9.0.2(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.0.0)(release-it@17.10.0(typescript@5.6.3))
       '@types/eslint__js':
-        specifier: ^8.42.3
+        specifier: 8.42.3
         version: 8.42.3
       '@types/node':
-        specifier: ^22.8.6
+        specifier: 22.8.6
         version: 22.8.6
       '@vitest/coverage-v8':
-        specifier: ^2.1.4
+        specifier: 2.1.4
         version: 2.1.4(vitest@2.1.4(@types/node@22.8.6))
       '@vitest/eslint-plugin':
-        specifier: ^1.1.7
+        specifier: 1.1.7
         version: 1.1.7(@typescript-eslint/utils@8.12.2(eslint@9.13.0(jiti@2.4.0))(typescript@5.6.3))(eslint@9.13.0(jiti@2.4.0))(typescript@5.6.3)(vitest@2.1.4(@types/node@22.8.6))
       console-fail-test:
-        specifier: ^0.5.0
+        specifier: 0.5.0
         version: 0.5.0
       eslint:
-        specifier: ^9.13.0
+        specifier: 9.13.0
         version: 9.13.0(jiti@2.4.0)
       eslint-plugin-n:
-        specifier: ^17.12.0
+        specifier: 17.12.0
         version: 17.12.0(eslint@9.13.0(jiti@2.4.0))
       husky:
-        specifier: ^9.1.6
+        specifier: 9.1.6
         version: 9.1.6
       knip:
-        specifier: ^5.36.1
+        specifier: 5.36.1
         version: 5.36.1(@types/node@22.8.6)(typescript@5.6.3)
       lint-staged:
-        specifier: ^15.2.10
+        specifier: 15.2.10
         version: 15.2.10
       prettier:
-        specifier: ^3.3.3
+        specifier: 3.3.3
         version: 3.3.3
       prettier-plugin-curly:
-        specifier: ^0.3.1
+        specifier: 0.3.1
         version: 0.3.1(prettier@3.3.3)
       prettier-plugin-packagejson:
-        specifier: ^2.5.3
+        specifier: 2.5.3
         version: 2.5.3(prettier@3.3.3)
       prettier-plugin-sh:
-        specifier: ^0.14.0
+        specifier: 0.14.0
         version: 0.14.0(prettier@3.3.3)
       release-it:
-        specifier: ^17.10.0
+        specifier: 17.10.0
         version: 17.10.0(typescript@5.6.3)
       tsup:
-        specifier: ^8.3.5
+        specifier: 8.3.5
         version: 8.3.5(jiti@2.4.0)(postcss@8.4.47)(typescript@5.6.3)(yaml@2.5.1)
       typescript:
-        specifier: ^5.6.3
+        specifier: 5.6.3
         version: 5.6.3
       typescript-eslint:
-        specifier: ^8.12.2
+        specifier: 8.12.2
         version: 8.12.2(eslint@9.13.0(jiti@2.4.0))(typescript@5.6.3)
       vitest:
-        specifier: ^2.1.4
+        specifier: 2.1.4
         version: 2.1.4(@types/node@22.8.6)
 
 packages:
