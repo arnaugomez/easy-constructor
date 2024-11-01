@@ -9,7 +9,7 @@ describe("easyConstructor", () => {
 			public property3!: undefined;
 
 			myMethod() {
-				console.log("myMethod");
+				return 3;
 			}
 
 			public static create = easyConstructor(ExampleClass);
@@ -25,7 +25,7 @@ describe("easyConstructor", () => {
 		expect(exampleClassInstance.property1).toBe("value1");
 		expect(exampleClassInstance.property2).toBe("value2");
 		expect(exampleClassInstance.property3).toBe(undefined);
-		expect(exampleClassInstance.myMethod).toBeInstanceOf(Function);
+		expect(exampleClassInstance.myMethod()).toBe(3);
 	});
 
 	it("Creates an instance of the class with optional properties", () => {
@@ -55,7 +55,7 @@ describe("easyConstructor", () => {
 		expect(exampleClassInstance.property2).toBe(undefined);
 		expect(exampleClassInstance.property3).toBe(undefined);
 		expect(exampleClassInstance.property4).toBe("default");
-		expect(exampleClassInstance.myMethod).toBeInstanceOf(Function);
+		expect(exampleClassInstance.myMethod()).toBe(3);
 	});
 
 	it("Creates an instance of the class with optional properties and custom constructor", () => {
@@ -95,6 +95,6 @@ describe("easyConstructor", () => {
 		expect(exampleClassInstance.property3).toBe(undefined);
 		expect(exampleClassInstance.property4).toBe("default");
 		expect(exampleClassInstance.property5).toBe(10);
-		expect(exampleClassInstance.myMethod).toBeInstanceOf(Function);
+		expect(exampleClassInstance.myMethod()).toBe(3);
 	});
 });
