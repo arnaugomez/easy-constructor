@@ -20,12 +20,18 @@ export function easyConstructor<
 			string,
 			unknown
 		>;
-		for (const key in input) {
-			if (!options?.exclude?.includes(key as TExclude)) {
-				// @ts-expect-error foo
-				// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-				newInstance[key] = input[key];
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+		for (const [key, value] of Object.entries(input)) {
+			if (options?.exclude?.includes(key as TExclude)) {
+				continue;
 			}
+			if (
+				value === undefined &&
+				options?.optional?.includes(key as TOptional)
+			) {
+				continue;
+			}
+			newInstance[key] = value;
 		}
 		return newInstance as T;
 	};
