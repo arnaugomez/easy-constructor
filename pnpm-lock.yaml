@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      type-fest:
+        specifier: ^4.26.1
+        version: 4.26.1
     devDependencies:
       '@eslint/js':
         specifier: 9.13.0
