@@ -8,6 +8,7 @@
 	},
 	"license": "MIT",
 	"author": {
+		"name": "Arnau Gómez",
 		"email": "agomez1f@gmail.com"
 	},
 	"type": "module",
