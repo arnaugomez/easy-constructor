@@ -15,12 +15,10 @@ export function easyConstructor<
 		input: SetOptional<Omit<ConstructorType<T>, TExclude>, TOptional>,
 		...constructorArguments: Arguments
 	): T {
-		// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 		const newInstance = new classType(...constructorArguments) as Record<
 			string,
 			unknown
 		>;
-		// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 		for (const [key, value] of Object.entries(input)) {
 			if (options?.exclude?.includes(key as TExclude)) {
 				continue;
