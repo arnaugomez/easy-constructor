@@ -15,17 +15,171 @@
 	<img alt="💪 TypeScript: Strict" src="https://img.shields.io/badge/%F0%9F%92%AA_typescript-strict-21bb42.svg" />
 </p>
 
-## Usage
+Write JavaScript class constructors in a single line of code.
+
+- Fully type-safe: TypeScript inference that feels like magic :mage:
+- Write classes in half the code == half the bugs :bug: == half the bundle size :package:
+- No more positional arguments. Enjoy named arguments :love_letter:
+
+Let me show you an example. :point_down:
+
+```ts
+// Before
+
+class ExampleClass {
+	property1: string;
+	property2: number;
+	property3: boolean;
+	property4: string;
+
+	// So much boilerplate!
+	constructor(
+		property1: string,
+		property2: number,
+		property3: boolean,
+		property4: string,
+	) {
+		// Feels like I'm writing the same thing twice.
+		this.property1 = property1;
+		this.property2 = property2;
+		this.property3 = property3;
+		this.property4 = property4;
+	}
+}
+
+// So many positional arguments. I can't remember what they are!
+const exampleInstance = new ExampleClass("Hello", 42, true, "World");
+```
+
+```ts
+// After
+
+import { easyConstructor } from "easy-constructor";
+
+class ExampleClass {
+	property1!: string;
+	property2!: number;
+	property3!: boolean;
+	property4!: string;
+
+	// Just one line!
+	static create = easyConstructor(ExampleClass);
+}
+
+// Named arguments! 🎉
+const exampleInstance = ExampleClass.create({
+	property1: "Hello",
+	property2: 42,
+	property3: true,
+	property4: "World",
+});
+```
+
+## Installation
 
 ```shell
 npm i easy-constructor
 ```
 
-```ts
-import { greet } from "easy-constructor";
+## Advanced usage
 
-greet("Hello, world! 💖");
+### Optional fields and default values
+
+The `easyConstructor` function treats all class fields as required by default. To make them optional, add them in the `optional` array.
+
+```ts
+import { easyConstructor } from "easy-constructor";
+
+class ExampleClass {
+	property1!: string;
+	property2!: number;
+	property3?: boolean;
+	property4: string = "default";
+
+	static create = easyConstructor(ExampleClass, {
+		optional: ["property3", "property4"],
+	});
+}
+const exampleInstance = ExampleClass.create({
+	property1: "Hello",
+	property2: 42,
+});
 ```
+
+TypeScript will infer the property names and provide auto-completion.
+
+### Omit variables and custom constructor
+
+You can combine `easyConstructor` with a custom constructor, if you need to initialize some variables with custom logic.
+
+To exclude variables from the easy constructor, use the `omit` array.
+
+```ts
+class ExampleClass {
+	property1!: string;
+	property2!: number;
+	property3!: boolean;
+	property4: number;
+
+	static create = easyConstructor(ExampleClass, {
+		omit: ["property4"],
+	});
+
+	// Custom constructor
+	constructor(property4: string) {
+		this.property4 = property4 * 2;
+	}
+}
+
+const exampleInstance = ExampleClass.create(
+	// Easy constructor arguments
+	{
+		property1: "Hello",
+		property2: 42,
+		property3: true,
+	},
+	// Custom constructor arguments
+	100,
+);
+```
+
+### Getters and setters
+
+Easy Constructor works with getters and setters too.
+
+```ts
+class ExampleClass {
+	property1!: string;
+
+	get property2() {
+		return this.property1.length;
+	}
+
+	static create = easyConstructor(ExampleClass, {
+		// Omit getter and setter properties
+		// from the easy constructor
+		omit: ["property2"],
+	});
+}
+
+const exampleInstance = ExampleClass.create({
+	property1: "Hello",
+});
+```
+
+### Limitations
+
+Does not support inheritance.
+
+Type inference only works with public fields.
+
+The properties from the easy constructor are assigned after the custom constructor is called. This means that the custom constructor can't access the properties of the easy constructor.
+
+### When should I (not) use Easy Constructor? :thinking:
+
+Easy Constructor is simple, lightweight, and designed to do one thing very well: remove boilerplate from class constructors.
+
+It is designed to replace 99% of the constructors in your app, where you are just assigning arguments to properties. However, if you have a very complex constructor, with hefty initialization logic, you should stick to the traditional constructor or use a factory function.
 
 ## Contributors
 
