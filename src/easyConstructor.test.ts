@@ -71,7 +71,7 @@ describe("easyConstructor", () => {
 			}
 
 			public static create = easyConstructor(ExampleClass, {
-				exclude: ["property5"],
+				omit: ["property5"],
 				optional: ["property2", "property4"],
 			});
 
@@ -96,5 +96,35 @@ describe("easyConstructor", () => {
 		expect(exampleClassInstance.property4).toBe("default");
 		expect(exampleClassInstance.property5).toBe(10);
 		expect(exampleClassInstance.myMethod()).toBe(3);
+	});
+
+	it("Works with getters and setters", () => {
+		class ExampleClass {
+			public property1!: string;
+			public property2!: string;
+
+			get property3() {
+				return "value3";
+			}
+
+			set property4(value: string) {
+				this.property2 = value;
+			}
+
+			public static create = easyConstructor(ExampleClass, {
+				omit: ["property3", "property4"],
+			});
+		}
+
+		const exampleClassInstance = ExampleClass.create({
+			property1: "value1",
+			property2: "value2",
+		});
+
+		expect(exampleClassInstance).toBeInstanceOf(ExampleClass);
+		expect(exampleClassInstance.property1).toBe("value1");
+		expect(exampleClassInstance.property2).toBe("value2");
+		exampleClassInstance.property4 = "value4";
+		expect(exampleClassInstance.property2).toBe("value4");
 	});
 });
