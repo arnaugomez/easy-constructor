@@ -1,4 +1,4 @@
-export interface EasyConstructorOptions<TExclude, TOptional> {
-	exclude?: TExclude[];
+export interface EasyConstructorOptions<TOmit, TOptional> {
+	omit?: TOmit[];
 	optional?: TOptional[];
 }

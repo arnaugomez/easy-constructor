@@ -5,14 +5,14 @@ import { EasyConstructorOptions } from "./types/EasyConstructorOptions.js";
 export function easyConstructor<
 	T,
 	Arguments extends unknown[],
-	TExclude extends keyof ConstructorType<T> = never,
+	TOmit extends keyof ConstructorType<T> = never,
 	TOptional extends keyof ConstructorType<T> = never,
 >(
 	classType: Class<T, Arguments>,
-	options?: EasyConstructorOptions<TExclude, TOptional>,
+	options?: EasyConstructorOptions<TOmit, TOptional>,
 ) {
 	return function (
-		input: SetOptional<Omit<ConstructorType<T>, TExclude>, TOptional>,
+		input: SetOptional<Omit<ConstructorType<T>, TOmit>, TOptional>,
 		...constructorArguments: Arguments
 	): T {
 		const newInstance = new classType(...constructorArguments) as Record<
@@ -20,7 +20,7 @@ export function easyConstructor<
 			unknown
 		>;
 		for (const [key, value] of Object.entries(input)) {
-			if (options?.exclude?.includes(key as TExclude)) {
+			if (options?.omit?.includes(key as TOmit)) {
 				continue;
 			}
 			if (
