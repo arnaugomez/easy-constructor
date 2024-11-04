@@ -1,3 +1,15 @@
+# [0.7.0](https://github.com/arnaugomez/easy-constructor/compare/0.5.0...0.7.0) (2024-11-04)
+
+### Bug Fixes
+
+- export types ([7e24204](https://github.com/arnaugomez/easy-constructor/commit/7e2420424f7a5537625e1b9aa79213537dca02e8))
+- make tests pass ([502951f](https://github.com/arnaugomez/easy-constructor/commit/502951f0298c794f1b9027f3fc28f2040dc0b0f5))
+
+### Features
+
+- add jsdoc comments to code ([24501e8](https://github.com/arnaugomez/easy-constructor/commit/24501e849685f05950ad4611f5d3f5c3aadd5817))
+- readme documentation ([3743015](https://github.com/arnaugomez/easy-constructor/commit/374301535393bf95e766bd2dbed62e3fae15c526))
+
 # [0.5.0](https://github.com/arnaugomez/easy-constructor/compare/0.2.0...0.5.0) (2024-11-01)
 
 ### Bug Fixes
