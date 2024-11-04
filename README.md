@@ -25,6 +25,7 @@ Let me show you an example. :point_down:
 
 ```ts
 // Before
+
 class ExampleClass {
 	property1: string;
 	property2: number;
@@ -51,8 +52,10 @@ const exampleInstance = new ExampleClass("Hello", 42, true, "World");
 ```
 
 ```ts
-import { easyConstructor } from "easy-constructor";
 // After
+
+import { easyConstructor } from "easy-constructor";
+
 class ExampleClass {
 	property1!: string;
 	property2!: number;
@@ -166,11 +169,13 @@ const exampleInstance = ExampleClass.create({
 
 ### Limitations
 
-Does not support inheritance. Does not support private or protected fields.
+Does not support inheritance.
+
+Type inference only works with public fields.
 
 The properties from the easy constructor are assigned after the custom constructor is called. This means that the custom constructor can't access the properties of the easy constructor.
 
-### When should I use Easy Constructor?
+### When should I (not) use Easy Constructor? :thinking:
 
 Easy Constructor is simple, lightweight, and designed to do one thing very well: remove boilerplate from class constructors.
 

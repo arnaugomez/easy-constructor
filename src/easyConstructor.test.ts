@@ -36,7 +36,7 @@ describe("easyConstructor", () => {
 			public property4: string = "default";
 
 			myMethod() {
-				console.log("myMethod");
+				return 3;
 			}
 
 			public static create = easyConstructor(ExampleClass, {
@@ -67,7 +67,7 @@ describe("easyConstructor", () => {
 			public property5: number;
 
 			myMethod() {
-				console.log("myMethod");
+				return 3;
 			}
 
 			public static create = easyConstructor(ExampleClass, {
