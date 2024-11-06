@@ -1,3 +1,5 @@
+<p align="center"><img src="logo.webp" width="200px" align="center" alt="Easy Constructor logo" /></p>
+
 <h1 align="center">Easy Constructor</h1>
 
 <p align="center">JavaScript class constructors without the boilerplate</p>
@@ -195,6 +197,16 @@ It is designed to replace 99% of the constructors in your app, where you are jus
     </tr>
   </tbody>
 </table>
+
+## Meme gallery
+
+Memes related to easy-constructor. Express the pain of creating class constructors in vanilla JavaScript. Want to contribute a meme? Open a PR!
+
+<a href="https://imgflip.com/i/998kqi"><img src="https://i.imgflip.com/998kqi.jpg" title="made at imgflip.com"/></a><div><a href="https://imgflip.com/memegenerator">from Imgflip Meme Generator</a></div>
+
+<a href="https://imgflip.com/i/998l3l"><img src="https://i.imgflip.com/998l3l.jpg" title="made at imgflip.com"/></a><div><a href="https://imgflip.com/memegenerator">from Imgflip Meme Generator</a></div>
+
+<a href="https://imgflip.com/i/998kfa"><img src="https://i.imgflip.com/998kfa.jpg" title="made at imgflip.com"/></a><div><a href="https://imgflip.com/memegenerator">from Imgflip Meme Generator</a></div>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
