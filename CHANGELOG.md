@@ -1,3 +1,9 @@
+# [0.8.0](https://github.com/arnaugomez/easy-constructor/compare/0.7.0...0.8.0) (2024-11-06)
+
+### Features
+
+- release version ([089a638](https://github.com/arnaugomez/easy-constructor/commit/089a638787ba871318f63bd4af77fe762bb477c7))
+
 # [0.7.0](https://github.com/arnaugomez/easy-constructor/compare/0.5.0...0.7.0) (2024-11-04)
 
 ### Bug Fixes
