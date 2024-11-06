@@ -1,6 +1,6 @@
 {
 	"name": "easy-constructor",
-	"version": "0.7.0",
+	"version": "0.7.1",
 	"description": "JavaScript class constructors without the boilerplate",
 	"repository": {
 		"type": "git",
