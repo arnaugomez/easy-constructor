@@ -29,24 +29,24 @@ Let me show you an example. :point_down:
 // Before
 
 class ExampleClass {
-	property1: string;
-	property2: number;
-	property3: boolean;
-	property4: string;
+  property1: string;
+  property2: number;
+  property3: boolean;
+  property4: string;
 
-	// So much boilerplate!
-	constructor(
-		property1: string,
-		property2: number,
-		property3: boolean,
-		property4: string,
-	) {
-		// Feels like I'm writing the same thing twice.
-		this.property1 = property1;
-		this.property2 = property2;
-		this.property3 = property3;
-		this.property4 = property4;
-	}
+  // So much boilerplate!
+  constructor(
+    property1: string,
+    property2: number,
+    property3: boolean,
+    property4: string,
+  ) {
+    // Feels like I'm writing the same thing twice.
+    this.property1 = property1;
+    this.property2 = property2;
+    this.property3 = property3;
+    this.property4 = property4;
+  }
 }
 
 // So many positional arguments. I can't remember what they are!
@@ -59,21 +59,21 @@ const exampleInstance = new ExampleClass("Hello", 42, true, "World");
 import { easyConstructor } from "easy-constructor";
 
 class ExampleClass {
-	property1!: string;
-	property2!: number;
-	property3!: boolean;
-	property4!: string;
+  property1!: string;
+  property2!: number;
+  property3!: boolean;
+  property4!: string;
 
-	// Just one line!
-	static create = easyConstructor(ExampleClass);
+  // Just one line!
+  static create = easyConstructor(ExampleClass);
 }
 
 // Named arguments! 🎉
 const exampleInstance = ExampleClass.create({
-	property1: "Hello",
-	property2: 42,
-	property3: true,
-	property4: "World",
+  property1: "Hello",
+  property2: 42,
+  property3: true,
+  property4: "World",
 });
 ```
 
@@ -93,18 +93,18 @@ The `easyConstructor` function treats all class fields as required by default. T
 import { easyConstructor } from "easy-constructor";
 
 class ExampleClass {
-	property1!: string;
-	property2!: number;
-	property3?: boolean;
-	property4: string = "default";
+  property1!: string;
+  property2!: number;
+  property3?: boolean;
+  property4: string = "default";
 
-	static create = easyConstructor(ExampleClass, {
-		optional: ["property3", "property4"],
-	});
+  static create = easyConstructor(ExampleClass, {
+    optional: ["property3", "property4"],
+  });
 }
 const exampleInstance = ExampleClass.create({
-	property1: "Hello",
-	property2: 42,
+  property1: "Hello",
+  property2: 42,
 });
 ```
 
@@ -118,30 +118,30 @@ To exclude variables from the easy constructor, use the `omit` array.
 
 ```ts
 class ExampleClass {
-	property1!: string;
-	property2!: number;
-	property3!: boolean;
-	property4: number;
+  property1!: string;
+  property2!: number;
+  property3!: boolean;
+  property4: number;
 
-	static create = easyConstructor(ExampleClass, {
-		omit: ["property4"],
-	});
+  static create = easyConstructor(ExampleClass, {
+    omit: ["property4"],
+  });
 
-	// Custom constructor
-	constructor(property4: string) {
-		this.property4 = property4 * 2;
-	}
+  // Custom constructor
+  constructor(property4: string) {
+    this.property4 = property4 * 2;
+  }
 }
 
 const exampleInstance = ExampleClass.create(
-	// Easy constructor arguments
-	{
-		property1: "Hello",
-		property2: 42,
-		property3: true,
-	},
-	// Custom constructor arguments
-	100,
+  // Easy constructor arguments
+  {
+    property1: "Hello",
+    property2: 42,
+    property3: true,
+  },
+  // Custom constructor arguments
+  100,
 );
 ```
 
@@ -151,21 +151,21 @@ Easy Constructor works with getters and setters too.
 
 ```ts
 class ExampleClass {
-	property1!: string;
+  property1!: string;
 
-	get property2() {
-		return this.property1.length;
-	}
+  get property2() {
+    return this.property1.length;
+  }
 
-	static create = easyConstructor(ExampleClass, {
-		// Omit getter and setter properties
-		// from the easy constructor
-		omit: ["property2"],
-	});
+  static create = easyConstructor(ExampleClass, {
+    // Omit getter and setter properties
+    // from the easy constructor
+    omit: ["property2"],
+  });
 }
 
 const exampleInstance = ExampleClass.create({
-	property1: "Hello",
+  property1: "Hello",
 });
 ```
 

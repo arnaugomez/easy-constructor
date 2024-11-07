@@ -23,34 +23,34 @@ import { EasyConstructorOptions } from "./types/EasyConstructorOptions.js";
  * @returns A factory function that creates an instance of the class.
  */
 export function easyConstructor<
-	T,
-	Arguments extends unknown[],
-	TOmit extends keyof ConstructorType<T> = never,
-	TOptional extends keyof ConstructorType<T> = never,
+  T,
+  Arguments extends unknown[],
+  TOmit extends keyof ConstructorType<T> = never,
+  TOptional extends keyof ConstructorType<T> = never,
 >(
-	classType: Class<T, Arguments>,
-	options?: EasyConstructorOptions<TOmit, TOptional>,
+  classType: Class<T, Arguments>,
+  options?: EasyConstructorOptions<TOmit, TOptional>,
 ) {
-	return function (
-		input: SetOptional<Omit<ConstructorType<T>, TOmit>, TOptional>,
-		...constructorArguments: Arguments
-	): T {
-		const newInstance = new classType(...constructorArguments) as Record<
-			string,
-			unknown
-		>;
-		for (const [key, value] of Object.entries(input)) {
-			if (options?.omit?.includes(key as TOmit)) {
-				continue;
-			}
-			if (
-				value === undefined &&
-				options?.optional?.includes(key as TOptional)
-			) {
-				continue;
-			}
-			newInstance[key] = value;
-		}
-		return newInstance as T;
-	};
+  return function (
+    input: SetOptional<Omit<ConstructorType<T>, TOmit>, TOptional>,
+    ...constructorArguments: Arguments
+  ): T {
+    const newInstance = new classType(...constructorArguments) as Record<
+      string,
+      unknown
+    >;
+    for (const [key, value] of Object.entries(input)) {
+      if (options?.omit?.includes(key as TOmit)) {
+        continue;
+      }
+      if (
+        value === undefined &&
+        options?.optional?.includes(key as TOptional)
+      ) {
+        continue;
+      }
+      newInstance[key] = value;
+    }
+    return newInstance as T;
+  };
 }
