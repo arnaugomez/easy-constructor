@@ -1,3 +1,9 @@
+## [0.8.2](https://github.com/arnaugomez/easy-constructor/compare/0.8.1...0.8.2) (2024-11-07)
+
+### Bug Fixes
+
+- code coverage ([79b4059](https://github.com/arnaugomez/easy-constructor/commit/79b4059f8bee244e9d2899e5a0c15012f342ad75))
+
 ## [0.8.1](https://github.com/arnaugomez/easy-constructor/compare/0.8.0...0.8.1) (2024-11-07)
 
 ### Bug Fixes
