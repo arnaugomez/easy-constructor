@@ -13,7 +13,7 @@ importers:
         version: 4.26.1
     devDependencies:
       '@arethetypeswrong/cli':
-        specifier: ^0.16.4
+        specifier: 0.16.4
         version: 0.16.4
       '@eslint/js':
         specifier: 9.13.0
