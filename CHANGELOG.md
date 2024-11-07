@@ -1,3 +1,9 @@
+# [0.9.0](https://github.com/arnaugomez/easy-constructor/compare/0.8.2...0.9.0) (2024-11-07)
+
+### Features
+
+- support common js as well as es modules ([8af6044](https://github.com/arnaugomez/easy-constructor/commit/8af60443fedc9a3fcf518ecd62ae1f1a7cbf42a1))
+
 ## [0.8.2](https://github.com/arnaugomez/easy-constructor/compare/0.8.1...0.8.2) (2024-11-07)
 
 ### Bug Fixes
