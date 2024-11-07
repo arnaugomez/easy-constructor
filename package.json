@@ -23,6 +23,12 @@
     "email": "agomez1f@gmail.com"
   },
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs"
+    }
+  },
   "main": "./lib/index.js",
   "files": [
     "lib/",
@@ -32,6 +38,7 @@
   ],
   "scripts": {
     "build": "tsup",
+    "check-exports": "attw --pack .",
     "format": "prettier .",
     "lint": "eslint . --max-warnings 0",
     "lint:knip": "knip",
@@ -46,6 +53,7 @@
     "type-fest": "^4.26.1"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.16.4",
     "@eslint/js": "9.13.0",
     "@release-it/conventional-changelog": "9.0.2",
     "@types/eslint__js": "8.42.3",
