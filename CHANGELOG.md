@@ -1,3 +1,9 @@
+## [0.9.2](https://github.com/arnaugomez/easy-constructor/compare/0.9.1...0.9.2) (2024-12-01)
+
+### Bug Fixes
+
+- **deps:** update dependency type-fest to v4.28.0 ([#24](https://github.com/arnaugomez/easy-constructor/issues/24)) ([8dbbda6](https://github.com/arnaugomez/easy-constructor/commit/8dbbda663bab5385b8fc12ad91d2c22da58c3ded))
+
 ## [0.9.1](https://github.com/arnaugomez/easy-constructor/compare/0.9.0...0.9.1) (2024-11-22)
 
 ### Bug Fixes
