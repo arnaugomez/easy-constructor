@@ -1,6 +1,6 @@
 {
   "name": "easy-constructor",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "JavaScript class constructors without the boilerplate",
   "keywords": [
     "javascript",
