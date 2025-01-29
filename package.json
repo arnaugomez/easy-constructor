@@ -64,7 +64,7 @@
     "eslint": "9.18.0",
     "eslint-plugin-n": "17.15.0",
     "husky": "9.1.6",
-    "knip": "5.42.0",
+    "knip": "5.43.1",
     "lint-staged": "15.4.0",
     "prettier": "3.4.1",
     "prettier-plugin-curly": "0.3.1",
